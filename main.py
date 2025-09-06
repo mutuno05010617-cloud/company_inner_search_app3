@@ -6,7 +6,17 @@
 # 1. ライブラリの読み込み
 ############################################################
 # 「.env」ファイルから環境変数を読み込むための関数
+# 「USER_AGENT」環境変数を取得して表示
+import os
 from dotenv import load_dotenv
+import streamlit as st
+import logging
+
+# USER_AGENTの値を取得
+user_agent = os.environ.get("USER_AGENT")
+st.info(f"USER_AGENT: {user_agent}")
+logging.basicConfig(level=logging.INFO)
+logging.info(f"USER_AGENT: {user_agent}")
 # ログ出力を行うためのモジュール
 import logging
 # streamlitアプリの表示を担当するモジュール
