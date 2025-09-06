@@ -12,6 +12,9 @@ from dotenv import load_dotenv
 import streamlit as st
 import logging
 
+# Streamlitの仕様：最初にset_page_configを呼び出す
+st.set_page_config(page_title="社内検索アプリ")
+
 # USER_AGENTの値を取得
 user_agent = os.environ.get("USER_AGENT")
 st.info(f"USER_AGENT: {user_agent}")
@@ -34,10 +37,7 @@ import constants as ct
 ############################################################
 # 2. 設定関連
 ############################################################
-# ブラウザタブの表示文言を設定
-st.set_page_config(
-    page_title=ct.APP_NAME
-)
+## ...existing code...
 
 # ログ出力を行うためのロガーの設定
 logger = logging.getLogger(ct.LOGGER_NAME)
